@@ -1,13 +1,19 @@
-let v;
-function f1(){
-    v=document.getElementById("a").value;
-    document.getElementById("hf").innerText="Value of Variable:- "+v;
-    console.log(v);
-}
-var x = setInterval(f2, 10000)
-function f2() {
-    v=Math.floor(Math.random()*(200 - 1) + 1);
-    document.getElementById("a").value = v;
-    document.getElementById("hf").innerText = "Value of Variable is: " + v;
-    console.log(v);
-}
+var v1= {};
+Object.defineProperty(v1, "iv", {
+    get : function (){
+      return value;
+    },
+    set : function (iv){
+      document.getElementById("a").value=iv;
+      value=iv;
+    },   
+});
+function f1(event)
+{
+    v1.iv=event.target.value;
+    document.getElementById("hf").innerHTML =v1.iv;
+}   
+setInterval(function(){      
+    v1.iv= Math.floor((Math.random() * 100) + 1);
+    document.getElementById("hf").innerHTML =v1.iv;    
+    }, 10000);
