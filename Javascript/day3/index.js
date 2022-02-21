@@ -8,6 +8,7 @@ Object.defineProperty(v1, "iv", {
       value=iv;
     },   
 });
+
 function f1(event)
 {
     v1.iv=event.target.value;
