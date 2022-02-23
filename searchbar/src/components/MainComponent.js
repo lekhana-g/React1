@@ -21,8 +21,7 @@ class MainComponent extends Component {
     }
     SearchInput = (e) => {
         this.setState({inp: e.target.value})
-      }
-    
+      }    
       SearchNow= () => {
         return this.state.names.filter(name => name.toLowerCase().includes(this.state.inp.toLowerCase()))
       }
