@@ -4,7 +4,7 @@ import MainComponent from './components/MainComponent'
 import Header from './components/Header'
 ReactDOM.render(
   <div>
-   <Header/> 
+   <Header/>
    <MainComponent></MainComponent>
   </div>
   ,document.getElementById('root')
