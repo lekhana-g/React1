@@ -12,7 +12,7 @@ export default function FlightDetails(props) {
                     <div>
                         <p className="card-text">{props.fid} <br/> {props.fname} <br/>{props.source} <br/> {props.destination} <br/> {props.departuretime} <br/> {props.arrivaltime} <br/> {props.totalcapacity} <br/> {props.costperseat}</p>
                     </div>
-                    <input type="button" className="btn btn-primary" value="Delete" onClick={props.deleteFlight} />
+                    <input type="button" id={props.fid} className="btn btn-primary" value="Delete" onClick={props.deleteFlight} />
               </div>
           </div>
     )

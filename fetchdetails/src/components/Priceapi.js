@@ -8,8 +8,6 @@ export class Priceapi extends Component {
             pricedata: {}
         }
     }
-
-
     render() {
         return (
             <div>
@@ -21,7 +19,7 @@ export class Priceapi extends Component {
                        <b>Sector:- {this.state.pricedata.DISPTYP}</b>
                        <br/><b> IFSC start id:- {this.state.pricedata.NSEID}</b>
                     </div>
-                    <div class="card-text" style={{paddingInlineStart:'10px',padding:'15px'}}>
+                    <div className="card-text" style={{paddingInlineStart:'10px',padding:'15px'}}>
                         <b>Current Price: </b>{this.state.pricedata.pricecurrent}<br/>
                         <b> Previous Price : </b> {this.state.pricedata.priceprevclose}
                         <br/>

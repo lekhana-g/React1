@@ -20,12 +20,11 @@ export class FlightList extends Component {
         )
    
     }
-    deleteFlight= (event) => Axios.delete(`https://localhost:5001/api/Flight/${event.target.fid}`).then((response)=>{
+    deleteFlight= (event) =>{ Axios.delete("https://localhost:5001/api/Flight/" + event.target.id).then(()=>{
         alert('Flight deleted');
-
         this.getData();
         });  
-    
+    }
     componentDidMount(){
        this.getData();
     }
