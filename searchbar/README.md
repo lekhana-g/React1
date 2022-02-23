@@ -1,3 +1,4 @@
 Search bar - task4
- css used - inline and semantic ui
- 
+
+
+css used - inline and semantic ui
