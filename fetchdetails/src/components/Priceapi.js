@@ -40,10 +40,12 @@ export class Priceapi extends Component {
         )
     }
     componentDidMount(){
-        var dataPromise=Axios.get("https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/SBI")
+        setInterval(()=>{
+        var dataPromise=Axios.get(this.props.apiUrl)
         dataPromise.then((response) => {
             this.setState({pricedata: response.data.data})
         })
+    },1000);
     }
 }
 
