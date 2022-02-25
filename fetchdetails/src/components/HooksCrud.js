@@ -49,60 +49,55 @@ function Hookscrud() {
             GetFlights();
         })
     }
+    
 
     return (
         <div>
+               <h1>Flight list:-</h1>
+                {flight.map((flights)=> {
+                    return  <FlightDetails key={flights.fid} {...flights} DeleteFlight={DeleteFlight}{...flights} UpdateFlight={UpdateFlight} ></FlightDetails>
+                })}
                 <div>
                 <form onSubmit={AddEmployee}>
                     <div>
                         <label>Enter Flight ID</label><br/>
-                        <br/>
                         <input type="number" name="fid" value={fid} onChange={(e)=> setFid(e.target.value)}/>
+                        <br/>
                     </div>
                     <div>
                         <label>Enter Flight name</label><br/>
-                        <br/>
-                        <input type="text" name="fname" value={fname} onChange={(e)=> setFname(e.target.value)}/>
+                        <input type="text" name="fname" value={fname} onChange={(e)=> setFname(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter source</label><br/>
-                        <br/>
-                        <input type="text" name="source" value={source} onChange={(e)=> setSouce(e.target.value)}/>
+                        <input type="text" name="source" value={source} onChange={(e)=> setSouce(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter destination</label><br/>
-                        <br/>
-                        <input type="text" name="destination" value={destination} onChange={(e)=>setDestination(e.target.value)}/>
+                        <input type="text" name="destination" value={destination} onChange={(e)=>setDestination(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter departure time</label><br/>
-                        <br/>
-                        <input type="datetime-local" name="departuretime" value={departuretime} onChange={(e)=> setDeptime(e.target.value)}/>
+                        <input type="datetime-local" name="departuretime" value={departuretime} onChange={(e)=> setDeptime(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter arrival time</label><br/>
-                        <br/>
-                        <input type="datetime-local" name="arrivaltime" value={arrivaltime} onChange={(e)=> setArrtime(e.target.value)}/>
+                        <input type="datetime-local" name="arrivaltime" value={arrivaltime} onChange={(e)=> setArrtime(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter total capacity</label><br/>
-                        <br/>
-                        <input type="number" name="totalcapacity" value={totalcapacity} onChange={(e)=> setTotalcap(e.target.value)}/>
+                        <input type="number" name="totalcapacity" value={totalcapacity} onChange={(e)=> setTotalcap(e.target.value)}/><br/>
                     </div>
                     <div>
                         <label>Enter costperseat</label><br/>
-                        <br/>
-                        <input type="number" name="costperseat" value={costperseat} onChange={(e)=> setCps(e.target.value)}/>
+                        <input type="number" name="costperseat" value={costperseat} onChange={(e)=> setCps(e.target.value)}/><br/>
                     </div>
                     <div>
                         <button type="submit">Add Flight</button>
                     </div>
                 </form>
                 </div>
-                <h1>Flight list:-</h1>
-                {flight.map((flights)=> {
-                    return  <FlightDetails key={flights.fid} {...flights} DeleteFlight={DeleteFlight}{...flights} ></FlightDetails>
-                })}
+               
         </div>
     )
 }
