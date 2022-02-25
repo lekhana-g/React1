@@ -2,5 +2,12 @@ REACT WORKSHOP
 ----
 |Task|Location|
 |---|---|
-|Day1-Module pattern|Javascript folder|
-|Day2-
+|Module pattern|Javascript folder|
+|Hovering|Javascript folder - day2|
+|Sync input box and variable|Javascript folder- day3|
+|Search bar task|Searchbar folder|
+|Stock api calls|fetchdetails folder|
+|Crud operations|fetchdetails folder|
+|singlepageapp|singlepageapp|
+|----|----|
+|workshop learnings|Classroom learnings folder|
