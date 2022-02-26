@@ -24,10 +24,9 @@ function MainComponent() {
 
     return (
         <div>
-             <br/>
-             <h1>Product details:- </h1>
+             <h4 style={{textAlign:"center",paddingTop:"40px"}}>Product details</h4>
              <hr/>
-             <table className="table table-striped">
+             <table className="table table-striped" style={{width:"600px",marginLeft:"auto",marginRight:"auto"}}>
                     <thead>
                         <tr>
                             <th>Product id</th>
@@ -47,7 +46,7 @@ function MainComponent() {
                             <td>{prods.qty}</td>
                             <td>{prods.price}</td>
                             <td>
-                            <Link to = {`/Update/${prods.pid}`} ><button className="btn btn-warning">Edit</button></Link>
+                            <Link to = {`/Update/${prods.pid}`} ><button className="btn btn-secondary">Edit</button></Link>
                             </td>
                             <td>
                             <button id={prods.pid} className="btn btn-danger" key={prods.pid} onClick={deleteProducts}>Delete</button>

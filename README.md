@@ -8,6 +8,6 @@ REACT WORKSHOP
 |Search bar task|Searchbar folder|
 |Stock api calls|fetchdetails folder|
 |Crud operations|fetchdetails folder|
-|singlepageapp|singlepageapp|
+|Single page application|singlepageapp|
 |----|----|
 |workshop learnings|Classroom learnings folder|
