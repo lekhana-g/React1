@@ -13,7 +13,7 @@ class AppComponent extends React.Component {
                 <input type="button" value="delete all" onClick={this.DeleteEmployeeList}/><br/><br/>
                 
                 {this.props.employees.map((employee) => {
-                    return <EmployeeDetailsComponent key={employee.id} {...employee}></EmployeeDetailsComponent>
+                    return <EmployeeDetailsComponent key={employee.id} {...employee} deleteSpecficEmployee={this.deleteSpecficEmployee}></EmployeeDetailsComponent>
                 })}
             </div>
         )
@@ -29,8 +29,12 @@ class AppComponent extends React.Component {
         })
     }
 
-    DeleteEmployeeList =() =>{
-            this.props.deleteAllEmployees()
+    deleteSpecficEmployee = (event) => {
+        this.props.deleteOneEmployee(event.target.id)
+    }
+
+    DeleteEmployeeList = () =>{
+        this.props.deleteAllEmployees()
     }
     
 }
@@ -54,7 +58,7 @@ function EmployeeDetailsComponent(props) {
                       <div>
                         <p className="card-text">{props.id} <b>{props.createdAt}</b> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <input type="button" id={props.id} className="btn btn-primary" value="Delete" onClick={props.deleteEmployee} />
+                    <input type="button" id={props.id} className="btn btn-primary" value="Delete" onClick={props.deleteSpecficEmployee} />
                     <input style={{marginLeft: "5px"}} type="button" name={props.id} className="btn btn-primary" value="Update" onClick={props.updateEmployee} />
                   </div>
               </div>
@@ -72,4 +76,5 @@ function mapPropsToStore(store) {
 }
 
 //connect is used to connect a react component to a redux store.
+//To get my components to actually use and update the store for state, I will use the connect function imported from react-redux.
 export default connect(mapPropsToStore, actions)(AppComponent)

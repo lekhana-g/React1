@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 function AddComponent() {
+    //https://github.com/Mayankgupta688/FareportalReact/blob/master/React/employee-details/src/hooksImplementation/ObjectDataComponent.js
+    //refer this
     var [pid, setPid] = useState('');
     var [pname, setPName] = useState('');
     var [qty, setQty] = useState('');

@@ -11,9 +11,9 @@ export function deleteAllEmployees(employeeList) {
     }
 }
 
-export function deleteEmpbyId(empid){
-    return{
-        type:"DELETEBYID",
-        payload:empid
+export function deleteOneEmployee(empId) {
+    return {
+        type: "DELETE_SPECIFIC_EMPLOYEES",
+        payload: empId
     }
 }

@@ -1,0 +1,112 @@
+-A component is a piece of reusable code,it has its own i/p,o/p and own functionality.We can use components as html elements.
+
+-React has two types of components:- 
+  1.Stateless functional components = basically js functions,they return html 
+  2.Stateful class components = extends component class from react library and a render method is used to return html
+
+-Exporting and importing components plays key role, it connects the component to the react application
+  To export - export default component_name
+  To import - import component_name from './components/component_name' or import anyname from './components/component_name'
+
+- In class componets, a class is considered as a component if 
+      1.it should extend the component class from react - class classname extends Component {}
+      2.it should implement a render method which will return null or html
+
+-JSX - javascript xml.It makes easy to write the code. className is used instead of class, as class is a reserved keyword for js. Camel casing is involved(onClick).
+       we can return only ONE html element(use div tag)
+       without jsx - render() {
+               return React.createElement('div', null, `Hello ${this.props.toWhat}`);
+               }
+            in the null - we can pass id,className to the particular html tag. {id:"abc",className:"class1"}
+
+-styling - it can be done in several ways
+   1.seperate css file can be created
+   2.inline styling can be done
+   3.bootstrap can be used
+   4.style object can be specified
+
+
+-Properties - optional input that componets accepts.To pass parameters
+              They are immutable.
+              In functional components we use props
+              In class components, we use this.props
+
+-HOC - Higher order component - it is a function that takes a component and returns a new component
+
+-Arrow function - used to preserve the context; not just syntax.
+                  The value of this would be retained.
+                  If the event is a lifecycle event, then this would be retained automatically.If not use arrow function to do so.
+
+-State of component - similar to props, props get passed to component and state is managed within component
+                      states can be changed
+                      In functional components we useState Hook
+                      In class components, we use this.state
+      steps:- 1.Create a state obj and initialise it, usually done inside class contructor 
+                  constructor(){
+                    super(){
+                       this.state={
+                           msg:"Welcome visitor"
+                         }
+                       }
+                      }
+                   changeMessage(){
+                      this.setState({
+                         msg:"Thanks for subscribing"
+                       })
+                     }
+                    render(){
+                      return (
+                       <div>
+                       <h1>{this.state.msg}</h1>
+                       <button onClick={()=>this.changeMessage()}>Subscribe</button>
+                       </div>
+                     }
+
+        Here we are able to change welcome visitor to thanks for subscribing based on the button click, this is possible using state
+        using props we will not be able to do this, as it is immutable.
+        Only place where we can assign this.state is in constructor 
+        Calls to setState is asynchronus
+
+-Both state and props hold info that influences the UI in the browser
+
+-Destructuring props and state - it improves code readability. two ways to destructure - destructuring in parameters , destructuring in function body
+
+-Event handling - event handler is a function and not a function call.In below example, clickHandler is used but these brackers() are not passed 
+                   <button onClick={clickHandler}>Click me</button>
+
+
+-Virtual DOM - a copy of DOM is made. 
+               A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing's power to directly change what's on the screen.
+               if there is a diff btw the real dom and virtual dom, then only the real dom gets updated.In the real dom only the particular change that is happened will be updated.
+ 
+-Hooks - only benifit in class components is we can create state.Now we can do the same in functional components.
+
+-setTimeout allows us to run a function once after the interval of time. setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+
+-/*useEffect - always put down after useState;
+               -takes function as an input
+               -has the behaviour of both componentDidUpdate and componentDidMound
+               -multiple useEffects can be used
+    */
+
+- for functions or var , start from a small letter . For components,hooks start with a capital letter
+  if we are creating a function and it contains jsx then - {function1()} - we have to call like this
+
+-Do not putdown business logics in jsx
+
+-Seperate states cannot be created for every variable in an object 
+  var[empd,setEmpd]=useState({
+      name:""
+      age:""
+      desg:""
+   });
+
+  function commonFunction(event){
+       setEmpd{
+       ...empd
+      [event.target.id]=event.target.value
+     }
+    } 
+   set id for every input tag and onChange={commonFunction}
+
+- useContext =  

@@ -8,6 +8,7 @@ import rootReducer from "./Reducer/index";
 
 var appStore = createStore(rootReducer)
 //we use rootReducer when we are creating a store
+//The Provider does just what its name implies, it provides the ability to access the store.
 ReactDOM.render((
     <Provider store={appStore}>
         <EmployeeCountComponent></EmployeeCountComponent>
